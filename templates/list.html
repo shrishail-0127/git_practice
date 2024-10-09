@@ -1,0 +1,7 @@
+{% for bus in buses %}
+  <p>{{ bus }}</p>
+  <form method="POST" action="{% url 'delete' bus.pk %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+  </form>
+{% endfor %}
